@@ -19,6 +19,5 @@ def matmul_from_scratch(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     if len(a[0]) != len(b):
         raise ValueError
     return np.array([
-        [sum(val_a*val_b for val_a, val_b in zip(row_a, col_b)) for col_b in zip(*b)] 
-        for row_a in a
+        [sum(v_a* v_b for v_a, v_b in zip(row_a, col_b)) for col_b in zip(*b)] for row_a in a
     ])
