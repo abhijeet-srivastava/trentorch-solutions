@@ -25,9 +25,10 @@ def qr_decompose(A):
 
     for k in range(n):
         u_k = A[:, k].astype(float)
+        a_k = A[:, k]
         for i in range(k):
             # Calculate the projection factor (dot product: a_k . q_i)
-            R[i, k] = np.dot(A[:, k], Q[:, i])
+            R[i, k] = np.dot(a_k, Q[:, i])
             # Subtract the projection along vector q_i
             u_k -= R[i, k] * Q[:, i]
         # Calculate the length of the remaining perpendicular vector
